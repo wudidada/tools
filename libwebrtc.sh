@@ -8,6 +8,7 @@ if [ $# -eq 1 ]; then
     out_dir=libwebrtc
 else
     out_dir="$1/libwebrtc"
+fi
 
 java_dir=$out_dir/java/org/webrtc
 mkdir -p $java_dir

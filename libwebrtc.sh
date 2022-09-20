@@ -11,7 +11,14 @@ elif [ $# - eq 1 -a $1 == '-z' ]
 then
     out_dir=libwebrtc
 else
-    out_dir="$1/libwebrtc"
+    for var in $@
+    do
+        if [ $var != '-z' ]
+        then
+            out_dir="$var/libwebrtc"
+            break
+        fi
+    done
 fi
 
 # copy .java

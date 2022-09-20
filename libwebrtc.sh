@@ -7,7 +7,7 @@ NINJA_DIR="${WEB_RTC_BASE}/out/arm64"
 if [ $# -eq 0 ]
 then
     out_dir=libwebrtc
-elif [ $# - eq 1 -a $1 == '-z' ]
+elif [ $# -eq 1 -a $1 == '-z' ]
 then
     out_dir=libwebrtc
 else

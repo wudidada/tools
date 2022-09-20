@@ -33,6 +33,7 @@ cp -Rv ${NINJA_DIR}/gen/**/org/webrtc/* ${java_dir}
 
 rm -rf ${java_dir}/**/examples
 rm -rf ${java_dir}/**/native_test
+rm $java_dir/**/R.java
 
 # copy .so
 jni_dir=$out_dir/jni

@@ -20,7 +20,7 @@ cp -Rv ${WEB_RTC_BASE}/rtc_base/**/org/webrtc/* ${java_dir}
 cp -Rv ${WEB_RTC_BASE}/modules/**/org/webrtc/* ${java_dir}
 cp -Rv ${NINJA_DIR}/gen/**/org/webrtc/* ${java_dir}
 
-rm -rf ${java_dir}/**/example
+rm -rf ${java_dir}/**/examples
 rm -rf ${java_dir}/**/native_test
 
 # copy .so

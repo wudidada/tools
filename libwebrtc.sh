@@ -4,7 +4,11 @@ WEB_RTC_BASE="/usr/webrtc/WebRTC/src"
 SDK_BASE="${WEB_RTC_BASE}/sdk"
 NINJA_DIR="${WEB_RTC_BASE}/out/arm64"
 
-if [ $# -eq 0 ]; then
+if [ $# -eq 0 ]
+then
+    out_dir=libwebrtc
+elif [ $# - eq 1 -a $1 == '-z' ]
+then
     out_dir=libwebrtc
 else
     out_dir="$1/libwebrtc"

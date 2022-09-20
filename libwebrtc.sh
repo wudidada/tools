@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 WEB_RTC_BASE="/usr/webrtc/WebRTC/src"
 SDK_BASE="${WEB_RTC_BASE}/sdk"

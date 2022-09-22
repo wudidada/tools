@@ -33,7 +33,7 @@ then
     UPDATE_DIR=$(dirname ${UPDATE_TAR})/${dir_name}
 
     rm -rf UPDATE_DIR
-    tar -zxf $UPDATE_TAR -C $(dirname --no-same-owner ${UPDATE_DIR})
+    tar -zxf $UPDATE_TAR --no-same-owner -C $(dirname ${UPDATE_DIR})
 else
     UPDATE_DIR=$UPDATE_TAR
 fi

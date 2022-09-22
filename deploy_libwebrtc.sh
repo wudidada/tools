@@ -3,6 +3,11 @@
 LIB_TAR='/Users/jusbin/Downloads/libwebrtc.tar.gz'
 PROJECT_DIR='/Users/jusbin/Code/RTCStartupDemo/RTCClientDemo/Android/RTCDroidDemo'
 
+if [ $# == 1 ]
+then
+    PROJECT_DIR=$1
+fi
+
 lib_dir=${LIB_TAR%%.*}
 rm -rf $lib_dir
 

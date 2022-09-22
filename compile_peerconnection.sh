@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ "${RTC_BASE}" ]
+if [ -z "${RTC_BASE}" ]
 then
     echo "RTC_BASE not set"
     exit 1

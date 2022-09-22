@@ -2,7 +2,4 @@
 
 echo $1
 
-if [ $1 = '-z' ]
-then
-    echo 'equal'
-fi
+echo $(dirname $1)

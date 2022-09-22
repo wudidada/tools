@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 # set -x
 
 if [ $# -eq 0 -o ! -d $1 ]
@@ -15,4 +15,5 @@ fi
 
 echo "out dir: ${out_dir}"
 
-tar -zcf $out_dir/$(basename $1).tar.gz -C $(dirname $1) $(basename $1) 
+xattr -c $1/**/*
+gtar -zvcf $out_dir/$(basename $1).tar.gz --exclude .DS_Store -C $(dirname $1) $(basename $1) 

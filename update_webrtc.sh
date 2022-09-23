@@ -2,7 +2,7 @@
 
 # set -x
 
-WEBRTC_SRC='/Users/jusbin/Code/src'
+WEBRTC_SRC='/Users/jusbin/Code/webrtc/src'
 if [ "$RTC_BASE" ]
 then 
     WEBRTC_SRC=$RTC_BASE
@@ -38,4 +38,4 @@ else
     UPDATE_DIR=$UPDATE_TAR
 fi
 
-rsync -av $UPDATE_DIR/ $WEBRTC_SRC
+rsync -av --exclude=.DS_Store $UPDATE_DIR/ $WEBRTC_SRC

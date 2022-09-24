@@ -1,0 +1,20 @@
+name: 'update'
+
+on:
+  push
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: unnecessary
+
+      - name: Adding Known Hosts
+        run: ssh-keyscan -p 22 -H ${{ secrets.HOST }}  >> ~/.ssh/known_hosts
+
+      - name: Deploy
+        run: ssh ${{ secrets.USER }}@${{ secrets.HOST }} "zsh /root/tools/deploy_server.sh"

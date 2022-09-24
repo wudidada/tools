@@ -3,7 +3,7 @@
 LIB_DIR='/Users/jusbin/Downloads/libwebrtc'
 PROJECT_DIR='/Users/jusbin/Code/RTCStartupDemo/RTCClientDemo/Android/RTCDroidDemo'
 
-if [ $# == 1 ]
+if [ "$#" = 1 ]
 then
     PROJECT_DIR=$1
 fi

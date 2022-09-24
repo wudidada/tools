@@ -1,4 +1,4 @@
-#/bin/zsh
+#!/bin/zsh
 
 source ~/.zshrc
 cm || exit 1

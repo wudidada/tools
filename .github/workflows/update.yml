@@ -17,4 +17,4 @@ jobs:
         run: ssh-keyscan -p 22 -H ${{ secrets.HOST }}  >> ~/.ssh/known_hosts
 
       - name: Deploy
-        run: ssh ${{ secrets.USER }}@${{ secrets.HOST }} "zsh /root/tools/deploy_server.sh"
+        run: ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "cd /root/tools && git pull"

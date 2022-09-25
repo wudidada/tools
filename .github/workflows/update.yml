@@ -22,4 +22,4 @@ jobs:
         run: ssh-keyscan -p 22 -H ${{ secrets.HOST }}  >> ~/.ssh/known_hosts
 
       - name: Update
-        run: ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "cd /root/tools && zsh update_code.sh $BRANCH_NAME"
+        run: ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "cd /root/tools && zsh update_code.sh ${{ env.BRANCH_NAME }}"

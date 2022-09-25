@@ -4,7 +4,7 @@ if [ -n "$1" ]
 then
     echo "switch to branch: $1"
     git checkout $1
-    if [ $? -ne 0 ]
+    if [ $? -eq 0 ]
     then
         echo "switch to branch $1 success"
     else

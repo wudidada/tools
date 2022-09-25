@@ -3,7 +3,8 @@
 if [ -n "$1" ]
 then
     echo "switch to branch: $1"
-    git checkout $1
+    git fetch
+    git switch $1
     if [ $? -eq 0 ]
     then
         echo "switch to branch $1 success"

@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print Branch
-        run: echo {{ BRANCH_NAME }}
+        run: echo ${{ BRANCH_NAME }}
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2
         with:
@@ -22,4 +22,4 @@ jobs:
         run: ssh-keyscan -p 22 -H ${{ secrets.HOST }}  >> ~/.ssh/known_hosts
 
       - name: Update
-        run: ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "cd /root/tools && zsh update_code.sh $BRANCH_NAME"
+        run: ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "cd /root/tools && zsh update_code.sh ${{ BRANCH_NAME }}"

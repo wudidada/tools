@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ARM64_OUT="out/arm64_new"
+ARM64_OUT="out/arm64"
 ARM64_RELEASE="out/arm64_release"
 
 if [ -z "${RTC_BASE}" ]

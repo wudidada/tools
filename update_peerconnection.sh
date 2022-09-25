@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ninja_dir="arm64_new"
+ninja_dir="arm64"
 if [ $# -gt 0 ]
 then
     ninja_dir="arm64_release"

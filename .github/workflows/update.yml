@@ -3,10 +3,15 @@ name: 'update'
 on:
   push
 
+env:
+  BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+
 jobs:
   compile:
     runs-on: ubuntu-latest
     steps:
+      - name: Print Branch
+        run: echo {{ BRANCH_NAME }}
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2
         with:
@@ -16,5 +21,5 @@ jobs:
       - name: Adding Known Hosts
         run: ssh-keyscan -p 22 -H ${{ secrets.HOST }}  >> ~/.ssh/known_hosts
 
-      - name: Deploy
-        run: ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "cd /root/tools && git pull"
+      - name: Update
+        run: ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "cd /root/tools && zsh update_code.sh ${{ BRANCH_NAME }}"

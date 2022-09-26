@@ -14,8 +14,8 @@ gclient sync
 
 echo "=========== compile debug version ==========="
 gn gen ${ARM64_OUT} --args='target_os="android" target_cpu="arm64"'
-ninja -C ${ARM64_OUT} libjingle_peerconnection_so || exit 1
+ninja -C ${ARM64_OUT} sdk/android || exit 1
 
 echo "=========== compile release version ==========="
 gn gen ${ARM64_RELEASE} --args='is_debug=false is_component_build=false rtc_include_tests=false target_os="android" target_cpu="arm64"'
-ninja -C ${ARM64_RELEASE} libjingle_peerconnection_so
+ninja -C ${ARM64_RELEASE} sdk/android

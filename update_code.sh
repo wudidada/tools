@@ -3,7 +3,7 @@
 if [ -n "$1" ]
 then
     echo "switch to branch: $1"
-    git fetch
+    git fetch wudidada
     git switch $1
     if [ $? -eq 0 ]
     then
